@@ -13,5 +13,8 @@ const productos = [
 ];
 
 // Usa reduce() para encontrar el producto más caro
-const productoMasCaro = productos.reduce(());
+const productoMasCaro = productos.reduce(
+  (max, precio) => (precio.precio > max ? precio.precio : max),
+  productos[0]
+);
 console.log(productoMasCaro); // Debería mostrar { nombre: "Laptop", precio: 800 }
